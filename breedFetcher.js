@@ -17,4 +17,10 @@ const fetchBreedDescription = function(breedName) {
 };
 
 const breedName = process.argv[2];
-fetchBreedDescription(breedName);
+fetchBreedDescription('Siberian', (error, description) => {
+  if (error) {
+    console.log('Error fetch details:', error);
+  } else {
+    console.log(description);
+  }
+});
